@@ -1,19 +1,15 @@
 from pythonping import ping
-import matplotlib.pyplot as plt
+
 
 def ping_list(ip_list):
     
     result_list = []
     rtt_avg_list = []
     for i in ip_list:
-        result = ping(i, count=10, verbose=True)
+        result = ping(i, count=10, verbose=False)
         rtt_avg_list.append(result.rtt_avg)
-        print("host: {0} rtt_avg: {1}".format(i, result.rtt_avg))
+        print("{0}, {1}".format(i, result.rtt_avg))
 
-    #plt.plot(rtt_avg_list)
-    plt.bar(ip_list, rtt_avg_list)
-    plt.ylabel('rtt_avg')
-    plt.show()
 
     return 
 
