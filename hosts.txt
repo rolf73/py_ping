@@ -1,9 +1,9 @@
 127.0.0.1, localhost
 debstatwork, debstatwork
-192.168.1.33, ipad-hvid
+#192.168.1.33, ipad-hvid
 #192.168.1.101, ipad-sort
 192.168.3.38, rpi3
 rpi4-20211030, rpi4
-192.168.1.146, chromecast
-192.168.1.114, sonosconnect
+#192.168.1.146, chromecast
+#192.168.1.114, sonosconnect
 dr.dk, dr.dk
