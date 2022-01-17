@@ -4,11 +4,11 @@ import sys
 
 def ping_list(ip_list):
 
-    rtt_avg_list = []
+    #rtt_avg_list = []
     for i in ip_list:
-        result = ping(i, count=10, verbose=False)
-        rtt_avg_list.append(result.rtt_avg)
-        print("{0}, {1}".format(i, result.rtt_avg))
+        result = ping(i[0], count=10, verbose=False)
+        #rtt_avg_list.append(result.rtt_avg)
+        print("{0}, {1}, {2}".format(i[0], i[1], result.rtt_avg)) if len(i) == 2 else print("{0}, {1}".format(i[0], result.rtt_avg))
 
 
 if __name__ == '__main__':
@@ -86,6 +86,7 @@ if __name__ == '__main__':
     data = sys.stdin.readlines()
     host_list = []
     for line in data:
-        line = line.replace('\n', '').strip()
-        host_list.append(line)
+        if line[0] != '#':
+            line = line.replace('\n', '').replace('"', '').strip().split(',')
+            host_list.append(line)
     ping_list(host_list)
